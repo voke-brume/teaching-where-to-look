@@ -46,8 +46,8 @@ class CASIAWebFace(data.Dataset):
 
     def __getitem__(self, index):
         img_path = self.image_list[index]
-        ind = img_path.find('faces_webface_112x112')
-        img_path = img_path[ind+28:]
+        ind = img_path.find('face_celeb_112x112')
+        img_path = img_path[ind+25:]
         
         label = self.label_list[index]
 

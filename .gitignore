@@ -133,3 +133,6 @@ dmypy.json
 *.mp4
 demo/
 checkpoint/
+
+# data folder
+/data

@@ -179,7 +179,7 @@ def run(args):
                 total = label.size(0)
                 correct = (np.array(predict.cpu()) == np.array(label.data.cpu())).sum()
                 
-                print("Iters: {:0>6d}, loss: {:.4f}, train_accuracy: {:.4f}, learning rate: {}".format(total_iters, loss_ce.item(), 100*correct/total, scheduler.get_lr()[0]))
+                print("Iters: {:0>6d}, loss: {:.4f}, train_accuracy: {:.4f}, learning rate: {}, epoch: {}".format(total_iters, loss_ce.item(), 100*correct/total, scheduler.get_lr()[0], epoch+1))
 
 
             # Save model
@@ -267,7 +267,7 @@ if __name__ == '__main__':
     print(args.down_size)
     
     # Path
-    args.train_folder = os.path.join(args.data_dir, 'faces_webface_112x112')
+    args.train_folder = os.path.join(args.data_dir, 'face_celeb_112x112')
     args.eval_folder = os.path.join(args.data_dir, 'evaluation')
     
     args.train_root = os.path.join(args.train_folder, 'image')
